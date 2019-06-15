@@ -16,6 +16,7 @@ public class Product {
      //getters and setters
 
        public int getAge(){
+
          return age;
        }
 

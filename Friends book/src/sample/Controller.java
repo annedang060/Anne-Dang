@@ -1,6 +1,7 @@
 package sample;
 
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
@@ -42,12 +43,11 @@ public class Controller {
    }
 
    public void removeFriend(ActionEvent actionEvent){
-       String name = textGetName.getText();
-       String school = textGetSchool.getText();
-       int age = Integer.parseInt(textGetAge.getText());
 
-       Product temp = new Product(name, school, age);
-       productList.getItems().remove(temp);
+       productList.getItems().remove(productList.getSelectionModel().getSelectedItem());
+       lblName.setText(" ");
+       lblSchool.setText("");
+       lblAge.setText("");
 
 
 
