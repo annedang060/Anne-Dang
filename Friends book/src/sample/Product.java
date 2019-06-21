@@ -1,26 +1,44 @@
 package sample;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Scanner;
+
 public class Product {
     public String name;
     public String school;
-     private int age;
 
 
-     Product(String n, String school, int age){
+
+     Product(String n, String school){
          name = n;
          this.school = school;
-         this.age = age;
+
 
 
      }
      //getters and setters
 
-       public int getAge(){
 
-         return age;
+
+       public void writeToFile() throws IOException{
+
+           FileWriter fw = new FileWriter("products.txt", true);
+           BufferedWriter bw = new BufferedWriter(fw);
+
+           bw.write(name + ",\r");
+           bw.write(school + ",\r");
+           bw.write(":\r");
+           bw.close();
+
        }
 
+
        public String toString(){
-         return name;
+         return "Name: " + name + "\tSchool " + school;
+
+
        }
 }
